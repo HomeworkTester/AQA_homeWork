@@ -11,8 +11,8 @@
     <name>AQA Homework</name>
 
     <properties>
-        <maven.compiler.source>15</maven.compiler.source>
-        <maven.compiler.target>15</maven.compiler.target>
+        <maven.compiler.source>17</maven.compiler.source>
+        <maven.compiler.target>17</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <allure.version>2.24.0</allure.version>
     </properties>
@@ -68,6 +68,12 @@
             <version>5.10.0</version>
         </dependency>
 
+        <dependency>
+            <groupId>com.codeborne</groupId>
+            <artifactId>selenide</artifactId>
+            <version>7.3.0</version>
+        </dependency>
+
     </dependencies>
 
     <build>
@@ -77,8 +83,8 @@
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>3.10.1</version>
                 <configuration>
-                    <source>15</source>
-                    <target>15</target>
+                    <source>17</source>
+                    <target>17</target>
                 </configuration>
             </plugin>
 
@@ -87,18 +93,16 @@
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>3.1.2</version>
                 <configuration>
-                    <includes>
-                        <include>**/*Test.java</include>
-                    </includes>
                     <parallel>methods</parallel>
                     <threadCount>2</threadCount>
-                    <forkCount>2</forkCount>
+                    <forkCount>1</forkCount>
                     <reuseForks>true</reuseForks>
+
                     <systemPropertyVariables>
+                        <allure.results.directory>target/allure-results</allure.results.directory>
                         <junit.jupiter.execution.parallel.enabled>true</junit.jupiter.execution.parallel.enabled>
                         <junit.jupiter.execution.parallel.mode.default>concurrent</junit.jupiter.execution.parallel.mode.default>
                         <junit.jupiter.execution.parallel.mode.classes.default>concurrent</junit.jupiter.execution.parallel.mode.classes.default>
-                        <allure.results.directory>target/allure-results</allure.results.directory>
                     </systemPropertyVariables>
                 </configuration>
             </plugin>
