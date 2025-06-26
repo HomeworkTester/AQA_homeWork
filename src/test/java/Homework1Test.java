@@ -2,6 +2,7 @@ import io.qameta.allure.Description;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
 import org.openqa.selenium.WebDriver;
@@ -10,6 +11,7 @@ import selenium.enums.ElementsTab;
 import selenium.steps.ElementsSteps;
 import selenium.steps.HomeSteps;
 import selenium.steps.TextBoxSteps;
+import selenium.utils.LoggingExtension;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
@@ -41,6 +43,7 @@ public class Homework1Test {
             "Петечка Петров, petya@test.com, Алматы, Москва",
             "Иван Иванов, ivan@example.com, Новосибирск, Санкт-Петербург"
     })
+    @ExtendWith(LoggingExtension.class)
     void textBoxFormTest(String name, String email, String address, String permAddress) {
         homeSteps.clickElementsCardStep();
         elementsSteps.openTabElements(ElementsTab.TEXT_BOX);

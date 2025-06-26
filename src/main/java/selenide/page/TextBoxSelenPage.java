@@ -2,6 +2,7 @@ package selenide.page;
 
 import com.codeborne.selenide.SelenideElement;
 
+import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
 
 public class TextBoxSelenPage {
@@ -10,7 +11,7 @@ public class TextBoxSelenPage {
     public SelenideElement inputEmail = $("#userEmail");
     public SelenideElement inputCurrentAddress = $("#currentAddress");
     public SelenideElement inputPermanentAddress = $("#permanentAddress");
-    public SelenideElement submitButton = $("#submit");
+    public SelenideElement submitButton = $(byText("Submit"));
 
     public SelenideElement outputBlock = $("#output");
     public SelenideElement outputName = $("#name");

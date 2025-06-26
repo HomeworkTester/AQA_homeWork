@@ -3,6 +3,7 @@ import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
 import org.openqa.selenium.WebDriver;
@@ -10,6 +11,7 @@ import selenium.driver.CustomWebDriverManager;
 import selenium.enums.ElementsTab;
 import selenium.enums.FormsTab;
 import selenium.steps.*;
+import selenium.utils.LoggingExtension;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
@@ -41,6 +43,7 @@ public class Homework2Test {
     @Test
     @Description("Форма Radio Button — проверка корректного отображения данных по нажатию радиокнопок")
     @DisplayName("Radio Button: валидация ввода и вывода")
+    @ExtendWith(LoggingExtension.class)
     void radioButtonTest() {
         homeSteps.clickElementsCardStep();
         elementsSteps.openTabElements(ElementsTab.RADIO_BUTTON);
@@ -65,6 +68,7 @@ public class Homework2Test {
             "Игорь, QAспециалист, igorQA@test.com, 7777777777, г. Москва пр.Ленина, Maths, 11, June, 2015",
             "Илья, BackРазработчик, back@test.com, 8888888888, г. ekb Nekrasova, Maths, 29, June, 2000"
     })
+    @ExtendWith(LoggingExtension.class)
     void practiceFormWorkflowTest(String firstName, String lastName, String email, String mobile, String address,
                                   String subjects, String day, String month, String year) throws InterruptedException {
         homeSteps.clickFormsCardStep();

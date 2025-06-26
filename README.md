@@ -8,8 +8,9 @@
 
 ## Технологии и инструменты
 
-- Java 15
-- Selenium WebDriver 4.20
+- Java 17
+- Selenium WebDriver 4.20.0
+- Selenide 7.3.0
 - JUnit 5 (Jupiter)
 - Maven 3.8+
 - Allure Framework (2.24)
@@ -23,7 +24,7 @@
 
 ### Предусловия
 
-- Установлен JDK 15 или выше  
-- Maven 3.8 или выше
+- Установлен JDK 17 или выше  
+- Maven 3.10 или выше
 
 Для запуска - mvn clean test
